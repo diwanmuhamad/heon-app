@@ -50,10 +50,14 @@ export const navLinks = [
     id: "product",
     title: "Product",
   },
-//   {
-//     id: "clients",
-//     title: "Clients",
-//   },
+  {
+    id: "signup",
+    title: "Sign Up",
+  },
+  {
+    id: "login",
+    title: "Login",
+  },
 ];
 
 export const features = [

@@ -1,11 +1,18 @@
 import styles from "../style";
-import { discount, robot } from "../assets";
+import { scrollvariants,slideIn } from "../const";
+import { robot } from "../assets";
 import Button from "./Button";
+import { motion } from 'framer-motion';
 
 const FirstSection = () => {
   return (
     <section id="home" className={`flex md:flex-row flex-col sm:py-6 py-6 `}>
-      <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
+      <motion.div 
+        variants={scrollvariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{once:false, amount: 0.25}}
+      className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
 
         <div className="flex flex-row justify-between items-center w-full">
           <h1 className="flex-1 font-poppins font-semibold ss:text-[80px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
@@ -22,9 +29,14 @@ const FirstSection = () => {
           lead to connecting for all
         </p>
         <Button styles="sm:mt-6 mt-6" />
-      </div>
+      </motion.div>
 
-      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
+      <motion.div 
+      variants={slideIn("right", "spring", 0, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{once:false, amount: 0.25}}
+      className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
         <img src={robot} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
 
         {/* gradient start */}
@@ -32,7 +44,7 @@ const FirstSection = () => {
         <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
         <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
         {/* gradient end */}
-      </div>
+      </motion.div>
 
     </section>
   );

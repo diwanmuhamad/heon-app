@@ -1,5 +1,42 @@
 import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 
+export const scrollvariants = {
+    hidden: {
+      opacity: 0,
+      y: -50,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 140,
+      },
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 80,
+      },
+    },
+  };
+
+export const slideIn = (direction, type, delay, duration) => ({
+    hidden: {
+      x: direction === 'left' ? '-20%' : direction === 'right' ? '20%' : 0,
+      y: direction === 'up' ? '20%' : direction === 'down' ? '30%' : 0,
+    },
+    show: {
+      x: 0,
+      y: 0,
+      transition: {
+        type,
+        delay,
+        duration,
+        ease: 'easeOut',
+      },
+    },
+  });
+
 export const navLinks = [
   {
     id: "home",
@@ -13,10 +50,10 @@ export const navLinks = [
     id: "product",
     title: "Product",
   },
-  {
-    id: "clients",
-    title: "Clients",
-  },
+//   {
+//     id: "clients",
+//     title: "Clients",
+//   },
 ];
 
 export const features = [

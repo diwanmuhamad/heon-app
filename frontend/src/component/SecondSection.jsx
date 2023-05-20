@@ -1,6 +1,9 @@
-import { features } from "../const";
+import { features, scrollvariants,slideIn } from "../const";
 import styles, { layout } from "../style";
 import Button from "./Button";
+import { motion } from 'framer-motion';
+
+
 
 const FeatureCard = ({ icon, title, content, index }) => (
   <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
@@ -20,7 +23,12 @@ const FeatureCard = ({ icon, title, content, index }) => (
 
 const SecondSection = () =>  (
   <section id="features" className={layout.section}>
-    <div className={layout.sectionInfo}>
+    <motion.div 
+    variants={scrollvariants}
+    initial="hidden"
+    whileInView="show"
+    viewport={{once:false, amount: 0.25}}
+    className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
         Be Our Freelancer, <br className="sm:block hidden" /> get
         the rewards.
@@ -32,13 +40,18 @@ const SecondSection = () =>  (
       </p>
 
       <Button styles={`mt-10`} />
-    </div>
+    </motion.div>
 
-    <div className={`${layout.sectionImg} flex-col`}>
+    <motion.div 
+    variants={slideIn("up", "spring", 0, 1)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{once:false, amount: 0.25}}
+    className={`${layout.sectionImg} flex-col`}>
       {features.map((feature, index) => (
         <FeatureCard key={feature.id} {...feature} index={index} />
       ))}
-    </div>
+    </motion.div>
   </section>
 );
 

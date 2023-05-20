@@ -28,7 +28,7 @@ const Login = () => {
 
                     </div>
 
-                    <div className="text-white mt-6">
+                    <div className="text-black mt-6">
                         Don't have an account? <Link to={{pathname:'/signup'}} className='text-blue-300 underline'>Sign Up</Link>
                     </div>
                 </div>

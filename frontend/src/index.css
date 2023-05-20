@@ -6,10 +6,10 @@
 
 :root {
   --black-gradient: linear-gradient(
-    144.39deg,
+    172.12deg,
     #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
+    #5c5151 -78.47%,
+    #060607 91.61%
   );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
@@ -53,6 +53,19 @@
     #6d6d6d -78.47%,
     #11101d 91.61%
   );
+}
+
+.text-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .bg-black-gradient-2 {

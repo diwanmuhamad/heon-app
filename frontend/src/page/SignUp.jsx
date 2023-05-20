@@ -54,7 +54,7 @@ const SignUp = () => {
                         </div>
                     </div>
 
-                    <div className="text-white mt-6">
+                    <div className="text-black mt-6">
                         Already have an account? <Link to={{pathname:'/login'}} className='text-blue-300 underline'>Login</Link>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       {/* <img src={logo} alt="heon" className="w-[124px] h-[32px]" /> */}
-      <h2 className="text-gradient font-poppins font-semibold ss:text-[36px] text-[26px]">heon</h2>
+      <h2 className="text-gradient font-poppins font-semibold ss:text-[40px] text-[30px]">heon</h2>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => {
           return (
@@ -19,7 +19,7 @@ const Navbar = () => {
             <Link 
               key={nav.id}
               className={`font-poppins font-normal cursor-pointer text-[16px] ${
-                active === nav.title ? "text-white" : "text-dimWhite"
+                active === nav.title ? "text-black font-bold" : "text-black-gradient"
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
               to={{pathname:`/${nav.id}`}}>{nav.title}</Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`font-poppins font-normal cursor-pointer text-[16px] ${
-                active === nav.title ? "text-white" : "text-dimWhite"
+                active === nav.title ? "text-black font-bold" : "text-black-gradient"
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
             >
@@ -49,7 +49,7 @@ const Navbar = () => {
         <div
           className={`${
             !toggle ? "hidden" : "flex"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-10`}
+          } p-6 bg-primary absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-10`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             {navLinks.map((nav, index) => {
@@ -58,7 +58,7 @@ const Navbar = () => {
                 (
                   <Link 
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-dimWhite"
+                    active === nav.title ? "text-black font-bold" : "text-black-gradient"
                   } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                   onClick={() => setActive(nav.title)}
                   to={{pathname:`/${nav.id}`}}>{nav.title}</Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
                 (<li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-dimWhite"
+                    active === nav.title ? "text-black font-bold" : "text-black-gradient"
                   } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                   onClick={() => setActive(nav.title)}
                 >

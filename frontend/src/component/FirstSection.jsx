@@ -15,13 +15,13 @@ const FirstSection = () => {
       className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
 
         <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="flex-1 font-poppins font-semibold ss:text-[80px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
+          <h1 className="flex-1 font-poppins font-semibold ss:text-[80px] text-[52px] text-black-gradient ss:leading-[100.8px] leading-[75px]">
             Your Next <br className="sm:block hidden" />{" "}
             <span className="text-gradient">Business</span>{" "}
           </h1>
         </div>
 
-        <h1 className="font-poppins font-semibold ss:text-[80px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
+        <h1 className="font-poppins font-semibold ss:text-[80px] text-[52px] text-black-gradient ss:leading-[100.8px] leading-[75px] w-full">
           Connector
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>

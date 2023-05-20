@@ -24,10 +24,10 @@ const FeatureCard = ({ icon, title, content, index }) => (
 const SecondSection = () =>  (
   <section id="features" className={layout.section}>
     <motion.div 
-    variants={scrollvariants}
+    variants={slideIn('left', "spring", 0, 1)}
     initial="hidden"
     whileInView="show"
-    viewport={{once:false, amount: 0.25}}
+    viewport={{once:true}}
     className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
         Be Our Freelancer, <br className="sm:block hidden" /> get
@@ -42,11 +42,11 @@ const SecondSection = () =>  (
       <Button styles={`mt-10`} />
     </motion.div>
 
-    <motion.div 
-    variants={slideIn("up", "spring", 0, 1)}
-    initial="hidden"
-    whileInView="show"
-    viewport={{once:false, amount: 0.25}}
+    <motion.div
+     variants={slideIn('down', "spring", 0, 1)}
+     initial="hidden"
+     whileInView="show"
+     viewport={{once:true}} 
     className={`${layout.sectionImg} flex-col`}>
       {features.map((feature, index) => (
         <FeatureCard key={feature.id} {...feature} index={index} />

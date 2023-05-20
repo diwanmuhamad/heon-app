@@ -8,10 +8,10 @@ const FirstSection = () => {
   return (
     <section id="home" className={`flex md:flex-row flex-col sm:py-6 py-6 `}>
       <motion.div 
-        variants={scrollvariants}
+        variants={slideIn('left', "spring", 0, 0.5)}
         initial="hidden"
         whileInView="show"
-        viewport={{once:false, amount: 0.25}}
+        viewport={{once:true}}
       className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
 
         <div className="flex flex-row justify-between items-center w-full">
@@ -31,11 +31,11 @@ const FirstSection = () => {
         <Button styles="sm:mt-6 mt-6" />
       </motion.div>
 
-      <motion.div 
-      variants={slideIn("right", "spring", 0, 1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{once:false, amount: 0.25}}
+      <motion.div
+       variants={slideIn('right', "spring", 0, 0.5)}
+       initial="hidden"
+       whileInView="show"
+       viewport={{once:true}} 
       className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
         <img src={robot} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
 

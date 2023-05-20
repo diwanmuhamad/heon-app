@@ -3,26 +3,26 @@ import { people01, people02, people03, facebook, instagram, linkedin, twitter, a
 export const scrollvariants = {
     hidden: {
       opacity: 0,
-      y: -50,
-      transition: {
-        type: 'spring',
-        stiffness: 300,
-        damping: 140,
-      },
+    //   y: -50,
+    //   transition: {
+    //     type: 'spring',
+    //     stiffness: 300,
+    //     damping: 140,
+    //   },
     },
     show: {
       opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 80,
-      },
+    //   y: 0,
+    //   transition: {
+    //     type: 'spring',
+    //     stiffness: 80,
+    //   },
     },
   };
 
 export const slideIn = (direction, type, delay, duration) => ({
     hidden: {
-      x: direction === 'left' ? '-20%' : direction === 'right' ? '20%' : 0,
+      x: direction === 'left' ? '-40%' : direction === 'right' ? '20%' : 0,
       y: direction === 'up' ? '20%' : direction === 'down' ? '30%' : 0,
     },
     show: {

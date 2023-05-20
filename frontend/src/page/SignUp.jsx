@@ -8,7 +8,7 @@ const SignUp = () => {
              <div className="bg-grey-lighter min-h-screen flex flex-col">
                 <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                     <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full border-solid border-2 border-white-600">
-                        <h1 className="mb-8 text-3xl text-center">Sign up <span className='text-gradient'>heon</span></h1>
+                        <h1 className="mb-8 text-3xl text-center font-poppins">Sign up <Link className='appearance-none cursor-pointer' to={{pathname:'/'}}><span className='text-gradient'>heon</span></Link></h1>
                         <input 
                             type="text"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
@@ -44,7 +44,7 @@ const SignUp = () => {
 
                         <button
                             type="button"
-                            className="w-full text-center py-3 rounded bg-blue-gradient text-black text-poppins hover:cursor-pointer focus:outline-none my-1"
+                            className="font-poppins w-full text-center py-3 rounded bg-blue-gradient text-black text-poppins hover:cursor-pointer focus:outline-none my-1"
                         >Create Account</button>
 
                         <div className="text-center text-sm text-grey-dark mt-4">

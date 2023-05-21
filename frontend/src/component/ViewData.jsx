@@ -1,6 +1,6 @@
 import React from "react";
 
-const ViewTable = ({setView, menu}) => {
+const ViewData = ({setView, menu}) => {
     return (
         <div className="w-full mt-7 rounded-lg h-[480px] p-5 shadow-md border-2">
             <div className="flex justify-end w-full">
@@ -19,4 +19,4 @@ const ViewTable = ({setView, menu}) => {
     )
 }
 
-export default ViewTable;
+export default ViewData;

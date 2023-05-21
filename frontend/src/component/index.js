@@ -7,9 +7,9 @@ import FourthSection from "./FourthSection";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import Contentbar from "./Contentbar";
-import FormMSME from './formMSME';
-import ViewTable from "./ViewTable";
+import FormMSMES from './FormMSMES';
+import ViewData from "./ViewData";
 
 
 export {Navbar, FirstSection, Button, SecondSection, ThirdSection, 
-    FourthSection, Footer, Contentbar, Sidebar, ViewTable, FormMSME}
+    FourthSection, Footer, Contentbar, Sidebar, ViewData, FormMSMES}

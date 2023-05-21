@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormMSME = () => {
+const FormMSMES = () => {
     return (
         <div className="w-full mt-7 rounded-lg h-[480px] p-5 shadow-md border-2">
             <div className="w-full h-5/6">
@@ -13,4 +13,4 @@ const FormMSME = () => {
     )
 }
 
-export default FormMSME;
+export default FormMSMES;

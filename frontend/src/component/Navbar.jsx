@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { close, logo, menu } from "../assets";
+import { close, heonlogo, menu } from "../assets";
 import { navLinks } from "../const";
 import {Link} from 'react-router-dom'
 
@@ -10,8 +10,8 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      {/* <img src={logo} alt="heon" className="w-[124px] h-[32px]" /> */}
-      <h2 className="text-gradient font-poppins font-semibold ss:text-[40px] text-[30px]">heon</h2>
+      <img src={heonlogo} alt="heon" className="w-[150px] h-[100px]" />
+      {/* <h2 className="text-gradient font-poppins font-semibold ss:text-[40px] text-[30px]">heon</h2> */}
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => {
           return (

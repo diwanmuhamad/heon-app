@@ -1,11 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { heonlogo } from "../assets";
 
 const Sidebar = ({menu, activeMenu, setMenuView}) => {
     const navigate = useNavigate()
     return (
         <div className="font-poppins bg-blue-gradient py-10 px-4 w-1/6 h-screen">
-            <h1 className="mb-7 pl-3">heon</h1>
+            <img
+            src={heonlogo}
+            className="h-[100px] w-[150px]"
+            />
+            
             <div className="h-2/3 border-b-2 w-full border-black-500">
                 {
                     menu.map((el, idx) => {

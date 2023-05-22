@@ -17,8 +17,8 @@ export const investorAdminMenu = [
     title: 'Profile'
   },
   {
-    id:'campaign',
-    title: 'Campaign'
+    id:'project',
+    title: 'Project'
   }
 ]
 

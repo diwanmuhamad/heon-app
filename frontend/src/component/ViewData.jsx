@@ -6,9 +6,7 @@ const ViewData = ({setView, menu}) => {
             <div className="flex justify-end w-full">
                 <button 
                 onClick={()=> {
-                    if (menu === "MSME") {
-                        setView(`add${menu}`)
-                    }
+                        setView(`add${menu}`)                    
                 }}
                 type='button' className="appearance-none w-[100px] bg-dimBlue rounded-lg shadow-md p-2">+ Add</button>
             </div>

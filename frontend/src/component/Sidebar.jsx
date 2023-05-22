@@ -5,7 +5,7 @@ import { heonlogo } from "../assets";
 const Sidebar = ({menu, activeMenu, setMenuView}) => {
     const navigate = useNavigate()
     return (
-        <div className="font-poppins bg-blue-gradient py-10 px-4 w-1/6 h-screen">
+        <div className="font-poppins bg-blue-gradient py-10 px-4 w-1/6">
             <img
             src={heonlogo}
             className="h-[100px] w-[150px]"

@@ -9,7 +9,8 @@ import Sidebar from "./Sidebar";
 import Contentbar from "./Contentbar";
 import FormMSMES from './FormMSMES';
 import ViewData from "./ViewData";
+import FormProject from "./FormProject";
 
 
 export {Navbar, FirstSection, Button, SecondSection, ThirdSection, 
-    FourthSection, Footer, Contentbar, Sidebar, ViewData, FormMSMES}
+    FourthSection, Footer, Contentbar, Sidebar, ViewData, FormMSMES, FormProject}

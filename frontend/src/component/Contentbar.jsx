@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {ViewData, FormMSMES} from '../component'
+import {ViewData, FormMSMES, FormProject} from '../component'
 
 const Contentbar = ({menu}) => {
     const [data, setData] = useState([])
@@ -25,6 +25,9 @@ const Contentbar = ({menu}) => {
                 :
                 view === "addMSME" ?
                 <FormMSMES setView={setView}/>
+                :
+                view === "addProject" ?
+                <FormProject setView={setView}/>
                 :
                 null
             }

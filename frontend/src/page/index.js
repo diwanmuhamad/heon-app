@@ -1,6 +1,7 @@
 import Home from "./Home";
 import SignUp from "./SignUp";
 import Login from "./Login";
-import Admin from "./Admin"
+import Chat from "./Chat"
 
-export { Home, SignUp, Login, Admin}
+
+export { Home, SignUp, Login, Chat}

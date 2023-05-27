@@ -5,12 +5,8 @@ import SecondSection from "./SecondSection";
 import ThirdSection from "./ThirdSection";
 import FourthSection from "./FourthSection";
 import Footer from "./Footer";
-import Sidebar from "./Sidebar";
-import Contentbar from "./Contentbar";
-import FormMSMES from './FormMSMES';
-import ViewData from "./ViewData";
-import FormProject from "./FormProject";
-
+import SidebarChat from "./SidebarChat";
+import MainChat from "./MainChat";
 
 export {Navbar, FirstSection, Button, SecondSection, ThirdSection, 
-    FourthSection, Footer, Contentbar, Sidebar, ViewData, FormMSMES, FormProject}
+    FourthSection, Footer, SidebarChat, MainChat}

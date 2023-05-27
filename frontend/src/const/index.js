@@ -1,27 +1,5 @@
 import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 
-export const freelanceAdminMenu = [
-  {
-    id:'profile',
-    title: 'Profile'
-  },
-  {
-    id:'msme',
-    title: 'MSME'
-  }
-]
-
-export const investorAdminMenu = [
-  {
-    id:'profile',
-    title: 'Profile'
-  },
-  {
-    id:'project',
-    title: 'Project'
-  }
-]
-
 
 export const scrollvariants = {
     hidden: {
@@ -70,8 +48,8 @@ export const navLinks = [
     title: "Features",
   },
   {
-    id: "product",
-    title: "Product",
+    id: "chat",
+    title: "Chat",
   },
   {
     id: "signup",

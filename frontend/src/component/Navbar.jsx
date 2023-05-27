@@ -15,7 +15,7 @@ const Navbar = () => {
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => {
           return (
-            nav.title == 'Sign Up' || nav.title == 'Login' ?
+            nav.title === 'Sign Up' || nav.title === 'Login' || nav.title === 'Chat'?
             <Link 
               key={nav.id}
               className={`font-poppins font-normal cursor-pointer text-[16px] ${
@@ -54,9 +54,10 @@ const Navbar = () => {
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             {navLinks.map((nav, index) => {
               return (
-                nav.title == 'Sign Up' || nav.title == 'Login' ?
+                nav.title === 'Sign Up' || nav.title === 'Login' || nav.title === 'Chat'?
                 (
                   <Link 
+                  key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
                     active === nav.title ? "text-black font-bold" : "text-black-gradient"
                   } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}

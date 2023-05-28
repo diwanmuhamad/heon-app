@@ -1,8 +1,25 @@
-import React from "react"
+import {useEffect} from "react"
 import { FaLocationArrow, FaBars, FaPlus } from "react-icons/fa";
 import { heonlogo } from "../assets";
 
 const MainChat = ({chatData, setChatData, setOpenSide}) => {
+
+    useEffect(()=> {
+        const input = document.querySelector('#prompt')
+        const contPrompt = document.querySelector('#contPrompt')
+        function autosize(){
+            var el = this;
+            setTimeout(function(){
+                if (el.scrollHeight <= 126) {
+                    el.style.cssText = 'height:auto; padding:0';
+                    // for box-sizing other than "content-box" use:
+                    // el.style.cssText = '-moz-box-sizing:content-box';
+                    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+                }
+            },0);
+          }
+        input.addEventListener('keydown', autosize)
+    },[])
     return (
         <div className="h-full w-full">
             <div className="h-[10%] bg-zinc-900 w-full flex justify-between p-3 sm:hidden text-gray-400">
@@ -32,16 +49,19 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                         </div>
                     }
                 </div>
-                <div className="h-1/6 w-full py-3">
-                    <div className="flex h-[65%] w-full shadow-2xl bg-neutral-600 rounded">
-                        <input type="text" className="appearance-none outline-none h-full w-[92%] bg-neutral-600 px-4 rounded-l" placeholder="Send Message..."/>
-                        <div className="h-full w-[8%] flex justify-center items-center">
-                            <FaLocationArrow
-                                className="text-gray-400 cursor-pointer"
-                            />
+                <div className="relative h-1/6 w-full py-3">
+                    <div id="contPrompt" className="relative flex h-[68%] w-full shadow-2xl bg-neutral-600 rounded">
+                        <div
+                        id="prompt"
+                        contentEditable="true"
+                        className="max-height-full resize-none appearance-none outline-none w-full bg-neutral-600 px-[20px] py-[15px] sm:py-[15px] rounded text-white overflow-hidden" placeholder="Send Message...">
                         </div>
+            
+                        <FaLocationArrow
+                            className="text-gray-400 cursor-pointer absolute bottom-2 lg:bottom-4 right-5"
+                        />
+   
                     </div>
-                    
                 </div>
 
             </div>

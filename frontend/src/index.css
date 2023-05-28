@@ -18,6 +18,12 @@
   scroll-behavior: smooth;
 }
 
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+}
+
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,

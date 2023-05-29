@@ -53,7 +53,7 @@ const SignUp = () => {
     const signUpUser = () => {
        if (isValid()) {
         //submit data to api
-        Axios.post('http://18.141.142.224:3002/auth/signup', userData)
+        Axios.post(`${import.meta.env.VITE_REACT_API_URL}/auth/signup`, userData)
           .then(function (response) {
             console.log(response);
             navigate('/login', { state: {signup: true}})

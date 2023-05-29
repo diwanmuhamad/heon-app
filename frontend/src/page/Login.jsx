@@ -45,7 +45,7 @@ const Login = () => {
     const loginUser = () => {
        if (isValid()) {
         //submit data to api to check
-        Axios.post('http://18.141.142.224:3002/auth/login', userData)
+        Axios.post(`${import.meta.env.VITE_REACT_API_URL}/auth/login`, userData)
         .then(function (response) {
           console.log(response);
           navigate('/', { state: {login: true}})

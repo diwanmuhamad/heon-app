@@ -15,7 +15,7 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
         temp.push({user:true, msg: question})
         setChatData(temp)
         setQuestion("")
-        Axios.post('http://18.141.142.224:3002/suggestions', {
+        Axios.post(`${import.meta.env.VITE_REACT_API_URL}/suggestions`, {
             question: question
           }, {
             headers: {
@@ -66,7 +66,7 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                         <div className="w-full h-full p-4">
                             <Link className='appearance-none cursor-pointer' to={{pathname:'/'}}><img src={heonlogo} className="h-[30%] w-[30%] mx-auto"/></Link>
                             <div className="w-full h-[40%] flex p-3 justify-between">
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Find you best buyers</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Find Your Best Buyers</div>
                                 <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Start The Deal</div>
                                 <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Match Your Needs</div>
                                 

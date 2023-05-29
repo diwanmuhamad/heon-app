@@ -25,8 +25,8 @@ const FirstSection = () => {
           Connector
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          Be the part of our team to help grow MSME community and
-          lead to connecting for all
+        Welcome to our innovative matchmaking system, where we bring buyers and MSMEs together based on their unique needs and requirements.
+        Join us today and unlock the potential of seamless business partnerships.
         </p>
         <Button styles="sm:mt-6 mt-6" />
       </motion.div>

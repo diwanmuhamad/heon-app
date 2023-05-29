@@ -17,6 +17,12 @@ app.use(bodyParser.json({ limit: '50mb', type: 'application/json' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use('/', router);
 
+app.get('/', async (req, res, next) => {
+  return res.status(200).json({
+    data: 'Welcome to h3on app'
+  })
+})
+
 app.use(express.json());
 
 const port = process.env.PORT || 3000

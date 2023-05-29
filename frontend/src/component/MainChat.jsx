@@ -89,7 +89,7 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                                         <p className="text-white ml-2">{el.msg}</p></div>
                                         :
                                         <div
-                                        className="w-full flex mb-5" 
+                                        className="w-full flex mb-5 bg-zinc-700 p-5 rounded" 
                                         key={el.data}>
                                         {/* <img src={heonlogo} width="20" height="20"/>     */}
                                         <p className="text-gradient">Heon:</p>

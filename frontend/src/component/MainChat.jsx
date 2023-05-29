@@ -1,9 +1,37 @@
-import {useEffect} from "react"
+import {useEffect, useState} from "react"
 import { FaLocationArrow, FaBars, FaPlus } from "react-icons/fa";
 import { heonlogo } from "../assets";
 import { Link } from "react-router-dom";
+import Axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MainChat = ({chatData, setChatData, setOpenSide}) => {
+    const [question, setQuestion] = useState("")
+
+    const submitChat = () => {
+        let temp = [...chatData]
+        temp.push({user:true, msg: question})
+        setChatData(temp)
+        setQuestion("")
+        Axios.post('http://18.141.142.224:3002/suggestions', {
+            question: question
+          }, {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}` 
+            }
+          }).then(function (response) {
+            console.log(response);
+            let temp2 = [...temp]
+            temp2.push({...response.data, user: false})
+            setChatData(temp2)
+          })
+          .catch(function (error) {
+            console.log(error);
+            toast.error("Something Wrong")
+          });
+    }
 
     useEffect(()=> {
         const input = document.querySelector('#prompt')
@@ -40,13 +68,33 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                             <div className="w-full h-[40%] flex p-3 justify-between">
                                 <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Find you best buyers</div>
                                 <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Start The Deal</div>
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Find Your Soulmate</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Match Your Needs</div>
                                 
                             </div>
                         </div>
                         :
                         <div>
-
+                            {
+                                chatData.map((el) => {
+                                    return(
+                                        el.user?
+                                        <div key={el.msg}
+                                        className="w-full flex mb-10"
+                                        
+                                        >
+                                        {/* <img width="30" height="30"/> */}
+                                        <p className="text-gray-400">You:</p>
+                                        <p className="text-white ml-2">{el.msg}</p></div>
+                                        :
+                                        <div
+                                        className="w-full flex mb-5" 
+                                        key={el.data}>
+                                        {/* <img src={heonlogo} width="20" height="20"/>     */}
+                                        <p className="text-gradient">Heon:</p>
+                                        <p className="text-white ml-2">{el.data}</p></div>
+                                    )
+                                })
+                            }
                         </div>
                     }
                 </div>
@@ -54,17 +102,19 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                     <div id="contPrompt" className="relative flex h-[68%] w-full shadow-2xl bg-neutral-600 rounded">
                         <textarea
                         id="prompt"
-                        onChange={(e)=>console.log(e.target.value)}
+                        value={question}
+                        onChange={(e)=>setQuestion(e.target.value)}
                         className="max-height-full resize-none appearance-none outline-none w-full bg-neutral-600 px-[20px] py-[15px] sm:py-[15px] rounded text-white overflow-hidden" placeholder="Send Message...">
                         </textarea>
             
                         <FaLocationArrow
+                            onClick={submitChat}
                             className="text-gray-400 cursor-pointer absolute bottom-4 right-5"
                         />
    
                     </div>
                 </div>
-
+                <ToastContainer/>
             </div>
         </div>
        

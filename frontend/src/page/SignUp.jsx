@@ -1,12 +1,16 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import Axios from 'axios';
 
 const SignUp = () => {
     // const [styleSelect, setStyleSelect] = useState(false)
+    const navigate = useNavigate()
     const [userData, setUserData] = useState({
-        username: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         confirmPassword: ""
@@ -49,7 +53,16 @@ const SignUp = () => {
     const signUpUser = () => {
        if (isValid()) {
         //submit data to api
-        toast.success("Sign Up Success")
+        Axios.post('http://18.141.142.224:3002/auth/signup', userData)
+          .then(function (response) {
+            console.log(response);
+            navigate('/login', { state: {signup: true}})
+            toast.success("Sign Up Success")
+          })
+          .catch(function (error) {
+            console.log(error);
+            toast.error("Something Wrong")
+          });
        }
     }
 
@@ -62,9 +75,16 @@ const SignUp = () => {
                         <input 
                             type="text"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
-                            name="username"
-                            placeholder="Username" 
-                            onChange={(e)=>setUserData({...userData, username: e.target.value})}    
+                            name="firstname"
+                            placeholder="Firstname" 
+                            onChange={(e)=>setUserData({...userData, firstName: e.target.value})}    
+                        />
+                        <input 
+                            type="text"
+                            className="block border border-grey-light w-full p-3 rounded mb-4"
+                            name="lastname"
+                            placeholder="Lastname" 
+                            onChange={(e)=>setUserData({...userData, lastName: e.target.value})}    
                         />
                             
                         <input 

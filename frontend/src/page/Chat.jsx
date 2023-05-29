@@ -7,7 +7,7 @@ const Chat = () => {
     const [openSide, setOpenSide] = useState(false)
     return (
         <div className="bg-primary w-full overflow-hidden flex">
-            <SidebarChat openSide={openSide} setOpenSide={setOpenSide}/>
+            <SidebarChat openSide={openSide} setOpenSide={setOpenSide} setChatData={setChatData}/>
             <MainChat chatData={chatData} setChatData={setChatData} setOpenSide={setOpenSide}/>
         </div>
     )

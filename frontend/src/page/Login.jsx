@@ -1,9 +1,17 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { useLocation, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import Axios from 'axios';
 
 const Login = () => {
+    const navigate = useNavigate()
+    const params = useLocation()
+    let signup = false
+    if (params && params.state) {
+        signup = params.state.signup
+    }
     const [userData, setUserData] = useState({
         email: "",
         password: "",
@@ -37,9 +45,25 @@ const Login = () => {
     const loginUser = () => {
        if (isValid()) {
         //submit data to api to check
-        toast.success("Login Success")
+        Axios.post('http://18.141.142.224:3002/auth/login', userData)
+        .then(function (response) {
+          console.log(response);
+          navigate('/', { state: {login: true}})
+          localStorage.setItem("token", response.data.data.token);
+          toast.success("Login Success")
+        })
+        .catch(function (error) {
+          console.log(error);
+          toast.error("Something Wrong")
+        });
        }
     }
+
+    useEffect(()=> {
+        if (signup) {
+            toast.success("Signup Success, Please Login to Continue")
+        }
+    }, [])
     return (
         <div className="bg-primary w-full overflow-hidden p-10">
              <div className="bg-grey-lighter min-h-screen flex flex-col">

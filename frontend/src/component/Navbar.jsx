@@ -2,9 +2,11 @@ import { useState } from "react";
 
 import { close, heonlogo, menu } from "../assets";
 import { navLinks } from "../const";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = () => {
+  const navigate = useNavigate()
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
@@ -18,11 +20,11 @@ const Navbar = () => {
             nav.title === 'Sign Up' || nav.title === 'Login' || nav.title === 'Chat'?
             <Link 
               key={nav.id}
-              className={`font-poppins font-normal cursor-pointer text-[16px] ${
+              className={`${localStorage.getItem('token') && (nav.title === "Sign Up" || nav.title === "Login")? "hidden" : ""} font-poppins font-normal cursor-pointer text-[16px] ${
                 active === nav.title ? "text-black font-bold" : "text-black-gradient"
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
               onClick={() => setActive(nav.title)}
-              to={{pathname:`/${nav.id}`}}>{nav.title}</Link>
+              to={{pathname:`/${!localStorage.getItem('token') && nav.title === "Chat" ? 'login': nav.id}`}}>{nav.title}</Link>
             :
             <li
               key={nav.id}
@@ -36,6 +38,17 @@ const Navbar = () => {
           )
         }
         )}
+        {
+          localStorage.getItem('token')?
+          <FaSignOutAlt className="text-red-700 cursor-pointer text-lg"
+          onClick={()=>{
+            navigate('/')
+            localStorage.removeItem('token')
+          }}
+          />
+          :
+          null
+        }
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -58,7 +71,7 @@ const Navbar = () => {
                 (
                   <Link 
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  className={`${localStorage.getItem('token') && (nav.title === "Sign Up" || nav.title === "Login")? "hidden" : ""} font-poppins font-medium cursor-pointer text-[16px] ${
                     active === nav.title ? "text-black font-bold" : "text-black-gradient"
                   } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                   onClick={() => setActive(nav.title)}

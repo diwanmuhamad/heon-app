@@ -5,10 +5,12 @@ import {
   router
 } from './routes'
 import bodyParser from 'body-parser';
+import cors from 'cors'
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 // body-parser
 app.use(bodyParser.json({ limit: '50mb', type: 'application/json' }));
@@ -16,13 +18,6 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use('/', router);
 
 app.use(express.json());
-
-app.get("/", async (req, res) => {
-  return res.json({
-    data: 'hello world',
-    message: "hello world",
-  });
-})
 
 const port = process.env.PORT || 3000
 

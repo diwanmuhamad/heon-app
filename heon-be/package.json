@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "d3-dsv": "2",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "hnswlib-node": "^1.4.2",
     "langchain": "^0.0.83"
   },
   "scripts": {

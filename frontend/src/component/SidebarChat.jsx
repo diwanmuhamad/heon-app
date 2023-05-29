@@ -1,4 +1,5 @@
 import React from "react"
+import { FaSignOutAlt } from "react-icons/fa";
 
 const SidebarChat = ({openSide, setOpenSide}) => {
     return (
@@ -12,7 +13,10 @@ const SidebarChat = ({openSide, setOpenSide}) => {
 
             </div>
             <div className="w-full h-1/6 border-t-[1px] border-white p-3">
-                <p className="text-white">Logout</p>
+                <div className="w-full flex justify-between">
+                    <p className="text-white">Logout</p>
+                    <FaSignOutAlt className="text-red-700 cursor-pointer mt-1 text-lg"/>
+                </div>
                 {
                     openSide && 
                     <h2 

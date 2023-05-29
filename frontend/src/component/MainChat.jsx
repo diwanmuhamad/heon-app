@@ -1,6 +1,7 @@
 import {useEffect} from "react"
 import { FaLocationArrow, FaBars, FaPlus } from "react-icons/fa";
 import { heonlogo } from "../assets";
+import { Link } from "react-router-dom";
 
 const MainChat = ({chatData, setChatData, setOpenSide}) => {
 
@@ -35,11 +36,11 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                     {
                         chatData.length === 0 ?
                         <div className="w-full h-full p-4">
-                            <img src={heonlogo} className="h-[30%] w-[30%] mx-auto"/>
+                            <Link className='appearance-none cursor-pointer' to={{pathname:'/'}}><img src={heonlogo} className="h-[30%] w-[30%] mx-auto"/></Link>
                             <div className="w-full h-[40%] flex p-3 justify-between">
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400">Find you best buyers</div>
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400">Start The Deal</div>
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400">Find Your Soulmate</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Find you best buyers</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Start The Deal</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Find Your Soulmate</div>
                                 
                             </div>
                         </div>
@@ -51,14 +52,14 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                 </div>
                 <div className="relative h-1/6 w-full py-3">
                     <div id="contPrompt" className="relative flex h-[68%] w-full shadow-2xl bg-neutral-600 rounded">
-                        <div
+                        <textarea
                         id="prompt"
-                        contentEditable="true"
+                        onChange={(e)=>console.log(e.target.value)}
                         className="max-height-full resize-none appearance-none outline-none w-full bg-neutral-600 px-[20px] py-[15px] sm:py-[15px] rounded text-white overflow-hidden" placeholder="Send Message...">
-                        </div>
+                        </textarea>
             
                         <FaLocationArrow
-                            className="text-gray-400 cursor-pointer absolute bottom-2 lg:bottom-4 right-5"
+                            className="text-gray-400 cursor-pointer absolute bottom-4 right-5"
                         />
    
                     </div>

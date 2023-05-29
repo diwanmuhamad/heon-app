@@ -5,10 +5,12 @@ import {
   router
 } from './routes'
 import bodyParser from 'body-parser';
+import cors from 'cors'
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 // body-parser
 app.use(bodyParser.json({ limit: '50mb', type: 'application/json' }));

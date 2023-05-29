@@ -19,13 +19,6 @@ app.use('/', router);
 
 app.use(express.json());
 
-app.get("/", async (req, res) => {
-  return res.json({
-    data: 'hello world',
-    message: "hello world",
-  });
-})
-
 const port = process.env.PORT || 3000
 
 app.listen(port, async () => {

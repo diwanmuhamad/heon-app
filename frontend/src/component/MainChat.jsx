@@ -4,17 +4,18 @@ import { heonlogo } from "../assets";
 import { Link } from "react-router-dom";
 import Axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MainChat = ({chatData, setChatData, setOpenSide}) => {
     const [question, setQuestion] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
 
     const submitChat = () => {
         let temp = [...chatData]
         temp.push({user:true, msg: question})
         setChatData(temp)
         setQuestion("")
+        setIsLoading(true)
         Axios.post(`${import.meta.env.VITE_REACT_API_URL}/suggestions`, {
             question: question
           }, {
@@ -22,7 +23,6 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
               'Authorization': `Bearer ${localStorage.getItem('token')}` 
             }
           }).then(function (response) {
-            console.log(response);
             let temp2 = [...temp]
             temp2.push({...response.data, user: false})
             setChatData(temp2)
@@ -30,7 +30,8 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
           .catch(function (error) {
             console.log(error);
             toast.error("Something Wrong")
-          });
+          }).finally(()=> setIsLoading(false))
+          ;
     }
 
     useEffect(()=> {
@@ -51,6 +52,7 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
     },[])
     return (
         <div className="h-full w-full">
+            
             <div className="h-[10%] bg-zinc-900 w-full flex justify-between p-3 sm:hidden text-gray-400">
                 <FaBars className="mt-1 cursor-pointer"
                 onClick={()=>setOpenSide(true)}
@@ -99,6 +101,9 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                     }
                 </div>
                 <div className="relative h-1/6 w-full py-3">
+                    <div className={`bg-zinc-700 rounded z-10 absolute top-[-37px] left-[35%] py-3 px-4 ${isLoading? "" : "hidden"}`}>
+                        <p className="text-white">Generating Response. Please Wait...</p>
+                    </div>
                     <div id="contPrompt" className="relative flex h-[68%] w-full shadow-2xl bg-neutral-600 rounded">
                         <textarea
                         id="prompt"

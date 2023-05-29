@@ -55,7 +55,6 @@ const SignUp = () => {
         //submit data to api
         Axios.post(`${import.meta.env.VITE_REACT_API_URL}/auth/signup`, userData)
           .then(function (response) {
-            console.log(response);
             navigate('/login', { state: {signup: true}})
             toast.success("Sign Up Success")
           })

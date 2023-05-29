@@ -47,7 +47,6 @@ const Login = () => {
         //submit data to api to check
         Axios.post(`${import.meta.env.VITE_REACT_API_URL}/auth/login`, userData)
         .then(function (response) {
-          console.log(response);
           navigate('/', { state: {login: true}})
           localStorage.setItem("token", response.data.data.token);
           toast.success("Login Success")

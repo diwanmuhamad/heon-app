@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Axios from 'axios';
 
 const SignUp = () => {
-    // const [styleSelect, setStyleSelect] = useState(false)
+   
     const navigate = useNavigate()
     const [userData, setUserData] = useState({
         firstName: "",
@@ -93,16 +93,6 @@ const SignUp = () => {
                             placeholder="Email" 
                             onChange={(e)=>setUserData({...userData, email: e.target.value})}      
                         />
-                        {/* <select 
-                            className={`block border border-grey-light w-full p-3 rounded mb-4 ${!styleSelect? "text-gray-500" : ""}`}
-                            name="Role"
-                            placeholder="Role"
-                            onChange={() => setStyleSelect(true)}
-                            >
-                                <option value="" selected disabled className='text-gray-500'>Role</option>
-                                <option value="1">Freelancer</option>
-                                <option value="2">Investor</option>
-                        </select> */}
 
                         <input 
                             type="password"

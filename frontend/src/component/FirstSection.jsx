@@ -1,8 +1,9 @@
 import styles from "../style";
 import { scrollvariants,slideIn } from "../const";
-import { robot } from "../assets";
+import { robot, chain1, chain2, chain3 } from "../assets";
 import Button from "./Button";
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 const FirstSection = () => {
   return (
@@ -28,7 +29,7 @@ const FirstSection = () => {
         Welcome to our innovative matchmaking system, where we bring buyers and MSMEs together based on their unique needs and requirements.
         Join us today and unlock the potential of seamless business partnerships.
         </p>
-        <Button styles="sm:mt-6 mt-6" />
+        <Link to={{pathname: '/chat'}} className="appearance-none"><Button styles="sm:mt-6 mt-6" /></Link>
       </motion.div>
 
       <motion.div
@@ -36,8 +37,8 @@ const FirstSection = () => {
        initial="hidden"
        whileInView="show"
        viewport={{once:true}} 
-      className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-        <img src={robot} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
+      className={`flex-1 flex ${styles.flexCenter} max-h-[600px] md:my-0 my-2 relative`}>
+        <img src={chain3} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
 
         {/* gradient start */}
         <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />

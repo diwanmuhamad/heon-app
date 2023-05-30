@@ -42,8 +42,6 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
             setTimeout(function(){
                 if (el.scrollHeight <= 126) {
                     el.style.cssText = 'height:auto; padding:0';
-                    // for box-sizing other than "content-box" use:
-                    // el.style.cssText = '-moz-box-sizing:content-box';
                     el.style.cssText = 'height:' + el.scrollHeight + 'px';
                 }
             },0);
@@ -84,14 +82,12 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                                         className="w-full flex mb-10"
                                         
                                         >
-                                        {/* <img width="30" height="30"/> */}
                                         <p className="text-gray-400">You:</p>
                                         <p className="text-white ml-2">{el.msg}</p></div>
                                         :
                                         <div
                                         className="w-full flex mb-5 bg-zinc-700 p-5 rounded" 
                                         key={el.data}>
-                                        {/* <img src={heonlogo} width="20" height="20"/>     */}
                                         <p className="text-gradient">Heon:</p>
                                         <p className="text-white ml-2">{el.data}</p></div>
                                     )

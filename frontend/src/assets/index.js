@@ -23,7 +23,10 @@ import twitter from "./twitter.svg";
 import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
-import heonlogo from "./heonlogo.png"
+import heonlogo from "./heonlogo.png";
+import chain1 from "./chain1.png";
+import chain2 from "./chain2.png";
+import chain3 from "./chain3.png"
 
 export {
   airbnb,
@@ -51,5 +54,8 @@ export {
   people01,
   people02,
   people03,
-  heonlogo
+  heonlogo,
+  chain1,
+  chain2,
+  chain3
 };

@@ -4,20 +4,11 @@ import { people01, people02, people03, facebook, instagram, linkedin, twitter, a
 export const scrollvariants = {
     hidden: {
       opacity: 0,
-    //   y: -50,
-    //   transition: {
-    //     type: 'spring',
-    //     stiffness: 300,
-    //     damping: 140,
-    //   },
+
     },
     show: {
       opacity: 1,
-    //   y: 0,
-    //   transition: {
-    //     type: 'spring',
-    //     stiffness: 80,
-    //   },
+ 
     },
   };
 
@@ -65,23 +56,23 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Matchmaking",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "Match buyers with MSMEs that meet their specific needs and interest",
   },
   {
     id: "feature-2",
     icon: shield,
     title: "100% Secured",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "We ensure efficient, secure and accurate connections between peers.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Save Time",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Saving time and effort for both parties to know each other",
   },
 ];
 

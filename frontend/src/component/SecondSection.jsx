@@ -2,6 +2,7 @@ import { features, scrollvariants,slideIn } from "../const";
 import styles, { layout } from "../style";
 import Button from "./Button";
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 
 
@@ -30,16 +31,13 @@ const SecondSection = () =>  (
     viewport={{once:true}}
     className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        Be Our Freelancer, <br className="sm:block hidden" /> get
-        the rewards.
+        Finding Your Perfect Fit,<br className="sm:block hidden" /> Engage and Explore
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With the right credit card, you can improve your financial life by
-        building credit, earning rewards and saving money. But with hundreds
-        of credit cards on the market.
+        Unlock the potential of our platform. Join a community who are leveraging our matchmaking expertise to find the perfect MSMEs partners that drive their businesses forward.
       </p>
 
-      <Button styles={`mt-10`} />
+      <Link to={{pathname: '/chat'}} className="appearance-none"><Button styles={"mt-10"} /></Link>
     </motion.div>
 
     <motion.div

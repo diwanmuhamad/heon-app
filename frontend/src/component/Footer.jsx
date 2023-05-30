@@ -11,9 +11,9 @@ const Footer = () => (
           alt="hoobank"
           className="w-[266px] h-[200px]"
         />
-        {/* <h2 className="text-gradient font-poppins font-semibold ss:text-[72px] text-[52px]">heon</h2> */}
+     
         <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
-          A new way to make the payments easy, reliable and secure.
+          Find your most suited business partner with us.
         </p>
       </div>
 

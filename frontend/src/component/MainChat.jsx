@@ -56,7 +56,9 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                 onClick={()=>setOpenSide(true)}
                 />
                 <h2>New Chat</h2>
-                <FaPlus className="mt-1 cursor-pointer"/>
+                <FaPlus
+                onClick={()=> setChatData([])} 
+                className="mt-1 cursor-pointer"/>
             </div>
             <div className="bg-neutral-800 w-full h-screen px-[10%] py-4">
            
@@ -97,7 +99,7 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                     }
                 </div>
                 <div className="relative h-1/6 w-full py-3">
-                    <div className={`bg-zinc-700 rounded z-10 absolute top-[-37px] left-[35%] py-3 px-4 ${isLoading? "" : "hidden"}`}>
+                    <div className={`bg-zinc-700 rounded z-10 absolute top-[-28px] text-[10px] left-[16%] py-3 px-4 xs:left-[24%] ss:left-[30%] sm:left-[36%] sm:text-[12px] sm:top-[-32px] md:text-[14px] md:top-[-34px] ${isLoading? "" : "hidden"}`}>
                         <p className="text-white">Generating Response. Please Wait...</p>
                     </div>
                     <div id="contPrompt" className="relative flex h-[68%] w-full shadow-2xl bg-neutral-600 rounded">

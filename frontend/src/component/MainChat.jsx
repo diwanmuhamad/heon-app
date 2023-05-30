@@ -68,9 +68,9 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                         <div className="w-full h-full p-4">
                             <Link className='appearance-none cursor-pointer' to={{pathname:'/'}}><img src={heonlogo} className="h-[30%] w-[30%] mx-auto"/></Link>
                             <div className="w-full h-[40%] flex p-3 justify-between">
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Find Your Best Buyers</div>
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Start The Deal</div>
-                                <div className="w-[30%] h-[60%] rounded py-3 bg-neutral-600 shadow-xl text-center text-gray-400 text-sm sm:text-base">Match Your Needs</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 px-2 bg-neutral-600 shadow-xl text-center text-gray-400 text-[12px] sm:text-base">Find Your Best Buyers</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 px-2 bg-neutral-600 shadow-xl text-center text-gray-400 text-[12px] sm:text-base">Start The Deal</div>
+                                <div className="w-[30%] h-[60%] rounded py-3 px-2 bg-neutral-600 shadow-xl text-center text-gray-400 text-[12px] sm:text-base">Match Your Needs</div>
                                 
                             </div>
                         </div>
@@ -112,7 +112,7 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
             
                         <FaLocationArrow
                             onClick={submitChat}
-                            className="text-gray-400 cursor-pointer absolute bottom-4 right-5"
+                            className="text-gray-400 cursor-pointer absolute bottom-5 right-5"
                         />
    
                     </div>

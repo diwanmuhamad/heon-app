@@ -6,9 +6,8 @@ import Axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const MainChat = ({chatData, setChatData, setOpenSide}) => {
+const MainChat = ({chatData, setChatData, setOpenSide, isLoading, setIsLoading}) => {
     const [question, setQuestion] = useState("")
-    const [isLoading, setIsLoading] = useState(false)
 
     const submitChat = () => {
         let temp = [...chatData]
@@ -57,8 +56,12 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                 />
                 <h2>New Chat</h2>
                 <FaPlus
-                onClick={()=> setChatData([])} 
-                className="mt-1 cursor-pointer"/>
+                onClick={()=> {
+                    if (!isLoading) {
+                        setChatData([])
+                    }
+                }} 
+                className={`mt-1 cursor-pointer ${isLoading? "cursor-default opacity-50": ""}`}/>
             </div>
             <div className="bg-neutral-800 w-full h-screen px-[10%] py-4">
            
@@ -111,8 +114,12 @@ const MainChat = ({chatData, setChatData, setOpenSide}) => {
                         </textarea>
             
                         <FaLocationArrow
-                            onClick={submitChat}
-                            className="text-gray-400 cursor-pointer absolute bottom-5 right-5"
+                            onClick={() => {
+                                if (!isLoading) {
+                                    submitChat()
+                                }
+                            }}
+                            className={`text-gray-400 cursor-pointer absolute bottom-5 right-5 ${isLoading? "cursor-default opacity-50": ""}`}
                         />
    
                     </div>

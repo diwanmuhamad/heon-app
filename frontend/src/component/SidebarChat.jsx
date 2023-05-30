@@ -15,7 +15,7 @@ const SidebarChat = ({openSide, setOpenSide, setChatData, isLoading, setIsLoadin
                             setOpenSide(false)
                         }
                         }}
-                    className={`appearance-none h-full w-full text-white hover:bg-stone-800 hover:rounded-lg ${isLoading? "cursor-default opacity-50": ""}`}>+ New chat</button>
+                    className={`appearance-none h-full w-full text-white hover:bg-stone-800 hover:rounded-lg ${isLoading? "cursor-not-allowed opacity-50": ""}`}>+ New chat</button>
                 </div>
             </div>
             <div className="h-4/6 w-full overflow-y-auto p-3">

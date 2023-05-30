@@ -61,7 +61,7 @@ const MainChat = ({chatData, setChatData, setOpenSide, isLoading, setIsLoading})
                         setChatData([])
                     }
                 }} 
-                className={`mt-1 cursor-pointer ${isLoading? "cursor-default opacity-50": ""}`}/>
+                className={`mt-1 cursor-pointer ${isLoading? "cursor-not-allowed opacity-50": ""}`}/>
             </div>
             <div className="bg-neutral-800 w-full h-screen px-[10%] py-4">
            
@@ -119,7 +119,7 @@ const MainChat = ({chatData, setChatData, setOpenSide, isLoading, setIsLoading})
                                     submitChat()
                                 }
                             }}
-                            className={`text-gray-400 cursor-pointer absolute bottom-5 right-5 ${isLoading? "cursor-default opacity-50": ""}`}
+                            className={`text-gray-400 cursor-pointer absolute bottom-5 right-5 ${isLoading? "cursor-not-allowed opacity-50": ""}`}
                         />
    
                     </div>

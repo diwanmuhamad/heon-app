@@ -29,7 +29,7 @@ const FirstSection = () => {
         Welcome to our innovative matchmaking system, where we bring buyers and MSMEs together based on their unique needs and requirements.
         Join us today and unlock the potential of seamless business partnerships.
         </p>
-        <Link to={{pathname: '/chat'}} className="appearance-none"><Button styles="sm:mt-6 mt-6" /></Link>
+        <Link to={{pathname: `/${localStorage.getItem('token')? "chat":"login"}`}} className="appearance-none"><Button styles="sm:mt-6 mt-6" /></Link>
       </motion.div>
 
       <motion.div

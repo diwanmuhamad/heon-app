@@ -37,7 +37,7 @@ const SecondSection = () =>  (
         Unlock the potential of our platform. Join a community who are leveraging our matchmaking expertise to find the perfect MSMEs partners that drive their businesses forward.
       </p>
 
-      <Link to={{pathname: '/chat'}} className="appearance-none"><Button styles={"mt-10"} /></Link>
+      <Link to={{pathname: `/${localStorage.getItem('token')? "chat":"login"}`}} className="appearance-none"><Button styles={"mt-10"} /></Link>
     </motion.div>
 
     <motion.div
